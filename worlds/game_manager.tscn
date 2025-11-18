@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw7bjl8a0n0kl"]
+
+[ext_resource type="Script" uid="uid://drohr4w7r466q" path="res://worlds/game_manager.gd" id="1_6agsp"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_6agsp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Main3D" type="Node3D" parent="."]
+
+[node name="Main2D" type="Node2D" parent="."]
+
+[node name="MainUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

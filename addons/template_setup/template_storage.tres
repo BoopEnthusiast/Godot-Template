@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TemplateStorage" load_steps=2 format=3 uid="uid://dujyyoo1nruww"]
+
+[ext_resource type="Script" uid="uid://dmnoahltgfwbb" path="res://addons/template_setup/template_storage_resource.gd" id="1_lhmqo"]
+
+[resource]
+script = ExtResource("1_lhmqo")
+metadata/_custom_type_script = "uid://dmnoahltgfwbb"

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cujra2s7hryxm"]
+
+[ext_resource type="PackedScene" uid="uid://qckb3gk4bmlf" path="res://addons/template_setup/renderers/renderer_selection.tscn" id="1_3gu6k"]
+[ext_resource type="Texture2D" uid="uid://e0hjog3q2xhq" path="res://addons/template_setup/renderers/3d.png" id="2_bh7m5"]
+
+[node name="3D" instance=ExtResource("1_3gu6k")]
+
+[node name="Title" parent="MarginContainer/VBoxContainer" index="0"]
+text = "3D"
+
+[node name="Preview" parent="MarginContainer/VBoxContainer" index="1"]
+texture = ExtResource("2_bh7m5")
+
+[node name="Description" parent="MarginContainer/VBoxContainer" index="2"]
+text = "Includes top-down, third-person, and first-person presets."
