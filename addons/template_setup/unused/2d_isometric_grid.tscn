@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dv2x03rpt0nc6"]
+
+[node name="2DIsometricGrid" type="Node2D"]

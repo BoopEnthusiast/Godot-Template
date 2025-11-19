@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bg2tqal45vej3"]
+
+[node name="3DIsometricGrid" type="Node3D"]

@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://n36s7yri6isw"]
+[gd_scene load_steps=3 format=3 uid="uid://n36s7yri6isw"]
 
 [ext_resource type="PackedScene" uid="uid://qckb3gk4bmlf" path="res://addons/template_setup/renderers/renderer_selection.tscn" id="1_b2kn2"]
+[ext_resource type="Texture2D" uid="uid://irh7dybabt8k" path="res://addons/template_setup/renderers/ui_control.png" id="2_ho3h2"]
 
 [node name="UIControl" instance=ExtResource("1_b2kn2")]
 
 [node name="Title" parent="MarginContainer/VBoxContainer" index="0"]
 text = "UI / Control"
+
+[node name="Preview" parent="MarginContainer/VBoxContainer" index="1"]
+texture = ExtResource("2_ho3h2")
 
 [node name="Description" parent="MarginContainer/VBoxContainer" index="2"]
 text = "Does not include any presets."

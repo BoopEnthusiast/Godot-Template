@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bacnwttl2qkgk"]
+
+[node name="3dThirdPerson" type="Node3D"]
