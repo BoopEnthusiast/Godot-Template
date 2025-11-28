@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dogy70wpruc2d"]
+
+[node name="SetupPageBase" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 2
+text = "Instructions"
+horizontal_alignment = 1
+
+[node name="Contents" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ConfirmBack" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Back" type="Button" parent="ConfirmBack"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Back"
+
+[node name="Confirm" type="Button" parent="ConfirmBack"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Confirm"
+
+[connection signal="pressed" from="ConfirmBack/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ConfirmBack/Confirm" to="." method="_on_confirm_pressed"]

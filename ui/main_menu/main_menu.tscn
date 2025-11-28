@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://8rpm2uklud0j"]
+
+[ext_resource type="Script" uid="uid://b5klogvbahctr" path="res://ui/main_menu/main_menu.gd" id="1_mu8pm"]
+[ext_resource type="Theme" uid="uid://vupqtuq0iwdg" path="res://ui/main_menu/main_menu_theme.tres" id="1_uhj5c"]
+
+[sub_resource type="GDScript" id="GDScript_uhj5c"]
+script/source = "extends Button
+
+
+func _on_pressed() -> void:
+	get_tree().quit()
+"
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uhj5c")
+script = ExtResource("1_mu8pm")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23697917
+anchor_top = 0.19290124
+anchor_right = 0.7630208
+anchor_bottom = 0.30092594
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 51
+text = "Title of this game here :3"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38194445
+anchor_top = 0.54012346
+anchor_right = 0.6180556
+anchor_bottom = 0.9583333
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Continue" type="HBoxContainer" parent="MenuButtons"]
+visible = false
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="MenuButtons/Continue"]
+layout_mode = 2
+text = "Continue"
+
+[node name="LastSave" type="Label" parent="MenuButtons/Continue"]
+layout_mode = 2
+text = "Last saved:"
+
+[node name="NewGame" type="Button" parent="MenuButtons"]
+layout_mode = 2
+text = "New Game"
+
+[node name="LoadGame" type="Button" parent="MenuButtons"]
+layout_mode = 2
+text = "Load Game"
+
+[node name="Settings" type="Button" parent="MenuButtons"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="MenuButtons"]
+layout_mode = 2
+text = "Quit"
+script = SubResource("GDScript_uhj5c")
+
+[connection signal="visibility_changed" from="." to="." method="_check_to_enable_continue_button"]
+[connection signal="pressed" from="MenuButtons/Settings" to="MenuButtons/Settings" method="_on_pressed"]
+[connection signal="pressed" from="MenuButtons/Quit" to="MenuButtons/Quit" method="_on_pressed"]

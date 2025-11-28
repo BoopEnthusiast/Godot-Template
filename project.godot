@@ -15,6 +15,12 @@ run/main_scene="uid://dw7bjl8a0n0kl"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Saves="*res://globals/saves.gd"
+Debug="*res://globals/debug.gd"
+GameSettings="*res://globals/game_settings.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/self_inspect/plugin.cfg", "res://addons/template_setup/plugin.cfg")
@@ -22,5 +28,11 @@ enabled=PackedStringArray("res://addons/self_inspect/plugin.cfg", "res://addons/
 [file_customization]
 
 folder_colors={
+"res://globals/": "green",
+"res://ui/": "blue",
 "res://worlds/": "pink"
 }
+
+[internationalization]
+
+locale/locale_filter_mode=0

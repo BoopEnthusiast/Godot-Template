@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfeygiorcdosn"]
+[gd_scene load_steps=4 format=3 uid="uid://cfeygiorcdosn"]
 
 [ext_resource type="Script" uid="uid://bnsujvvaddf03" path="res://addons/template_setup/setup_window.gd" id="1_w2l12"]
-[ext_resource type="PackedScene" uid="uid://2qvn0y8mpokn" path="res://addons/template_setup/renderer/renderer.tscn" id="3_1cxkl"]
-[ext_resource type="PackedScene" uid="uid://dwb674460m15g" path="res://addons/template_setup/preset_settings/preset_settings.tscn" id="4_sc67k"]
+[ext_resource type="PackedScene" uid="uid://1th2vetkb7ie" path="res://addons/template_setup/renderer/renderers.tscn" id="2_yksn2"]
 
 [sub_resource type="GDScript" id="GDScript_vs7ft"]
 script/source = "@tool
@@ -55,12 +54,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Renderer" parent="FullWindow/Contents" instance=ExtResource("3_1cxkl")]
-visible = false
-layout_mode = 2
-
-[node name="PresetSettings" parent="FullWindow/Contents" instance=ExtResource("4_sc67k")]
+[node name="Renderers" parent="FullWindow/Contents" instance=ExtResource("2_yksn2")]
 layout_mode = 2
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
-[connection signal="confirmed_renderers" from="FullWindow/Contents/Renderer" to="FullWindow/Contents/PresetSettings" method="_on_confirmed_renderers"]

@@ -1,26 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw7bjl8a0n0kl"]
+[gd_scene load_steps=7 format=3 uid="uid://dw7bjl8a0n0kl"]
 
 [ext_resource type="Script" uid="uid://drohr4w7r466q" path="res://worlds/game_manager.gd" id="1_6agsp"]
+[ext_resource type="Script" uid="uid://bee6ktlrc116t" path="res://ui/ui_manager.gd" id="2_7jq8h"]
+[ext_resource type="PackedScene" uid="uid://8rpm2uklud0j" path="res://ui/main_menu/main_menu.tscn" id="2_taxo1"]
+[ext_resource type="PackedScene" uid="uid://cqal5b5afl84h" path="res://ui/main_menu/new_game/new_game.tscn" id="4_s018s"]
+[ext_resource type="PackedScene" uid="uid://lmmmvib41l7e" path="res://ui/main_menu/load_game/load_game.tscn" id="5_5h4vh"]
+[ext_resource type="PackedScene" uid="uid://chko3wtqpfk5x" path="res://ui/settings/settings.tscn" id="6_s3qj1"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_6agsp")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UIManager" type="CanvasLayer" parent="."]
+script = ExtResource("2_7jq8h")
+animation_type = 2
+animation_length = 0.5
 
-[node name="MainMenu" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MainMenu" parent="UIManager" instance=ExtResource("2_taxo1")]
 
-[node name="Main3D" type="Node3D" parent="."]
+[node name="NewGame" parent="UIManager" instance=ExtResource("4_s018s")]
+visible = false
 
-[node name="Main2D" type="Node2D" parent="."]
+[node name="LoadGame" parent="UIManager" instance=ExtResource("5_5h4vh")]
+visible = false
 
-[node name="MainUI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Settings" parent="UIManager" instance=ExtResource("6_s3qj1")]
+visible = false
+
+[connection signal="continue_pressed" from="UIManager/MainMenu" to="UIManager" method="_on_continue_pressed"]
+[connection signal="load_game_pressed" from="UIManager/MainMenu" to="UIManager" method="_on_load_game_pressed"]
+[connection signal="new_game_pressed" from="UIManager/MainMenu" to="UIManager" method="_on_new_game_pressed"]
+[connection signal="settings_pressed" from="UIManager/MainMenu" to="UIManager" method="_on_settings_pressed"]

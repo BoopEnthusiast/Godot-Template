@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://1th2vetkb7ie"]
+
+[ext_resource type="PackedScene" uid="uid://dogy70wpruc2d" path="res://addons/template_setup/components/setup_page_base.tscn" id="1_2yeyi"]
+[ext_resource type="Script" uid="uid://4hyfus5raq1b" path="res://addons/template_setup/renderer/renderers.gd" id="2_n2j8b"]
+[ext_resource type="PackedScene" uid="uid://cadray24botf6" path="res://addons/template_setup/renderer/renderer_selector.tscn" id="3_n2j8b"]
+
+[node name="Renderers" instance=ExtResource("1_2yeyi")]
+script = ExtResource("2_n2j8b")
+
+[node name="Instructions" parent="." index="0"]
+text = "Welcome to Boop's Godot template!
+
+Select the presets you want and select a primary preset:"
+
+[node name="RendererSelector" parent="Contents" index="0" instance=ExtResource("3_n2j8b")]
+layout_mode = 2
+
+[node name="Back" parent="ConfirmBack" index="0"]
+visible = false

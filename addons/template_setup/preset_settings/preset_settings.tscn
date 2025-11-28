@@ -1,24 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwb674460m15g"]
+[gd_scene load_steps=3 format=3 uid="uid://dwb674460m15g"]
 
-[ext_resource type="Script" uid="uid://by6tujjbdoqip" path="res://addons/template_setup/preset_settings/preset_settings.gd" id="1_3ccch"]
+[ext_resource type="PackedScene" uid="uid://dogy70wpruc2d" path="res://addons/template_setup/components/setup_page_base.tscn" id="1_3ccch"]
+[ext_resource type="Script" uid="uid://by6tujjbdoqip" path="res://addons/template_setup/preset_settings/preset_settings.gd" id="2_28g8o"]
 
-[node name="PresetSettings" type="VBoxContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_3ccch")
+[node name="PresetTypes" instance=ExtResource("1_3ccch")]
+script = ExtResource("2_28g8o")
 
-[node name="Label" type="Label" parent="."]
+[node name="Instructions" parent="." index="0"]
+text = "Select types of presets you want"
+
+[node name="2DIsometric" type="FoldableContainer" parent="Contents/ContentList" index="0"]
 layout_mode = 2
-text = "Select individual preset settings"
-horizontal_alignment = 1
+title = "2D isometric"
 
-[node name="Confirm" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="Contents/ContentList/2DIsometric" index="0"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "Confirm"
 
-[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
+[node name="Free" type="CheckBox" parent="Contents/ContentList/2DIsometric/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Free movement"
+
+[node name="Grid" type="CheckBox" parent="Contents/ContentList/2DIsometric/VBoxContainer" index="1"]
+layout_mode = 2
+text = "Grid Movement"
+
+[node name="2DTopDown" type="FoldableContainer" parent="Contents/ContentList" index="1"]
+layout_mode = 2
+title = "2D top-down"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Contents/ContentList/2DTopDown" index="0"]
+layout_mode = 2
+
+[node name="Free" type="CheckBox" parent="Contents/ContentList/2DTopDown/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Free movement"
+
+[node name="Grid" type="CheckBox" parent="Contents/ContentList/2DTopDown/VBoxContainer" index="1"]
+layout_mode = 2
+text = "Grid Movement"
+
+[node name="3DIsometric" type="FoldableContainer" parent="Contents/ContentList" index="2"]
+layout_mode = 2
+title = "3D isometric"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Contents/ContentList/3DIsometric" index="0"]
+layout_mode = 2
+
+[node name="Free" type="CheckBox" parent="Contents/ContentList/3DIsometric/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Free movement"
+
+[node name="Grid" type="CheckBox" parent="Contents/ContentList/3DIsometric/VBoxContainer" index="1"]
+layout_mode = 2
+text = "Grid Movement"
+
+[node name="3DTopDown" type="FoldableContainer" parent="Contents/ContentList" index="3"]
+layout_mode = 2
+title = "3D top-down"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Contents/ContentList/3DTopDown" index="0"]
+layout_mode = 2
+
+[node name="Free" type="CheckBox" parent="Contents/ContentList/3DTopDown/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Free movement"
+
+[node name="Grid" type="CheckBox" parent="Contents/ContentList/3DTopDown/VBoxContainer" index="1"]
+layout_mode = 2
+text = "Grid Movement"
