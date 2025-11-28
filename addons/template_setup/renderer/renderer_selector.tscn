@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://cadray24botf6"]
+
+[ext_resource type="Script" uid="uid://dpcgbqpe1h5ll" path="res://addons/template_setup/components/preset_selector.gd" id="1_d4nxo"]
+
+[node name="RendererSelector" type="VBoxContainer"]
+size_flags_horizontal = 3
+
+[node name="2D" type="FoldableContainer" parent="."]
+layout_mode = 2
+folded = true
+title = "2D"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="2D"]
+visible = false
+layout_mode = 2
+
+[node name="Isometric" type="CheckBox" parent="2D/VBoxContainer"]
+layout_mode = 2
+text = "Isometric"
+script = ExtResource("1_d4nxo")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
+
+[node name="SideOn" type="CheckBox" parent="2D/VBoxContainer"]
+layout_mode = 2
+text = "Side-on"
+script = ExtResource("1_d4nxo")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
+
+[node name="TopDown" type="CheckBox" parent="2D/VBoxContainer"]
+layout_mode = 2
+text = "Top-down"
+script = ExtResource("1_d4nxo")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
+
+[node name="3D" type="FoldableContainer" parent="."]
+layout_mode = 2
+folded = true
+title = "3D"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="3D"]
+visible = false
+layout_mode = 2
+
+[node name="FirstPerson" type="CheckBox" parent="3D/VBoxContainer"]
+layout_mode = 2
+text = "First-person
+"
+script = ExtResource("1_d4nxo")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
+
+[node name="Isometric" type="CheckBox" parent="3D/VBoxContainer"]
+layout_mode = 2
+text = "Isometric"
+script = ExtResource("1_d4nxo")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
+
+[node name="SideOn" type="CheckBox" parent="3D/VBoxContainer"]
+layout_mode = 2
+text = "Side-on"
+script = ExtResource("1_d4nxo")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
+
+[node name="ThirdPerson" type="CheckBox" parent="3D/VBoxContainer"]
+layout_mode = 2
+text = "Third-person"
+script = ExtResource("1_d4nxo")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
+
+[node name="TopDown" type="CheckBox" parent="3D/VBoxContainer"]
+layout_mode = 2
+text = "Top-down"
+script = ExtResource("1_d4nxo")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
+
+[node name="UI" type="FoldableContainer" parent="."]
+layout_mode = 2
+folded = true
+title = "UI"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+visible = false
+layout_mode = 2
+
+[node name="Empty" type="CheckBox" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "Empty (UI games tend to be unique and lack commonalities)"
+script = ExtResource("1_d4nxo")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
+
+[node name="Drag" type="CheckBox" parent="UI/VBoxContainer"]
+layout_mode = 2
+text = "Drag screen and elements around"
+script = ExtResource("1_d4nxo")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
