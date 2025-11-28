@@ -3,24 +3,16 @@ class_name PresetSelector
 extends CheckBox
 
 
-signal set_primary(preset: StringName, selector: PresetSelector)
+signal set_primary(selector: PresetSelector)
+signal toggled_off(selector: PresetSelector)
 
-var is_primary: bool = false:
-	set(value):
-		if not is_node_ready():
-			await ready
-		if value:
-			_set_primary.visible = false
-		elif button_pressed:
-			_set_primary.visible = true
-		else:
-			_set_primary.visible = false
-		is_primary = value
 
 var _set_primary: Button
 
 
 func _ready() -> void:
+	toggled.connect(_on_toggled)
+	
 	# If there's no primary button already
 	if get_child_count(true) == 1 and _set_primary == get_child(0, true):
 		return
@@ -33,16 +25,26 @@ func _ready() -> void:
 	_make_new_set_primary_button()
 
 
+func not_primary_anymore() -> void:
+	_set_primary.visible = true
+	_set_primary.disabled = false
+	_set_primary.text = "Set primary"
+
+
 func _on_set_primary_pressed() -> void:
-	set_primary.emit(text, self)
-	is_primary = true
+	_set_primary.disabled = true
+	_set_primary.text = "Primary"
+	set_primary.emit(self)
 
 
 func _on_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		_set_primary.visible = not is_primary
+		_set_primary.visible = true
 	else:
+		toggled_off.emit(self)
 		_set_primary.visible = false
+		_set_primary.disabled = false
+		_set_primary.text = "Set primary"
 
 
 func _make_new_set_primary_button() -> void:
@@ -53,5 +55,6 @@ func _make_new_set_primary_button() -> void:
 	_set_primary.text = "Set primary"
 	_set_primary.set_anchors_and_offsets_preset(Control.PRESET_RIGHT_WIDE, Control.PRESET_MODE_KEEP_SIZE)
 	_set_primary.set_anchors_and_offsets_preset(Control.PRESET_RIGHT_WIDE, Control.PRESET_MODE_KEEP_SIZE)
-	#set_primary_button.visible = false
+	_set_primary.visible = false
+	
 	_set_primary.pressed.connect(_on_set_primary_pressed)

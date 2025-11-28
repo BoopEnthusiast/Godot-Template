@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://2qvn0y8mpokn"]
+
+[ext_resource type="Script" uid="uid://4hyfus5raq1b" path="res://addons/template_setup/renderer/renderers.gd" id="1_ydjxs"]
+[ext_resource type="PackedScene" uid="uid://cadray24botf6" path="res://addons/template_setup/renderer/renderer_selector.tscn" id="2_3otkb"]
+
+[node name="Renderer" type="VBoxContainer"]
+script = ExtResource("1_ydjxs")
+
+[node name="Welcome" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Welcome to Boop's Godot template!
+
+Enable presets and select primary:"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Renderers" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RendererSelector" parent="Renderers" instance=ExtResource("2_3otkb")]
+layout_mode = 2
+
+[node name="Confirm" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+disabled = true
+text = "Confirm selection"
+
+[connection signal="primary_deselected" from="Renderers/RendererSelector" to="." method="_on_renderer_selector_primary_deselected"]
+[connection signal="primary_selected" from="Renderers/RendererSelector" to="." method="_on_renderer_selector_primary_selected"]
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

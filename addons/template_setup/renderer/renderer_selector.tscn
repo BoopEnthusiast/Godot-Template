@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cadray24botf6"]
+[gd_scene load_steps=3 format=3 uid="uid://cadray24botf6"]
 
+[ext_resource type="Script" uid="uid://cojqi0towr6cw" path="res://addons/template_setup/renderer/renderer_selector.gd" id="1_818oq"]
 [ext_resource type="Script" uid="uid://dpcgbqpe1h5ll" path="res://addons/template_setup/components/preset_selector.gd" id="1_d4nxo"]
 
 [node name="RendererSelector" type="VBoxContainer"]
 size_flags_horizontal = 3
+script = ExtResource("1_818oq")
 
 [node name="2D" type="FoldableContainer" parent="."]
 layout_mode = 2

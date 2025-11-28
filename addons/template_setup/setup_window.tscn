@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfeygiorcdosn"]
+[gd_scene load_steps=5 format=3 uid="uid://cfeygiorcdosn"]
 
 [ext_resource type="Script" uid="uid://bnsujvvaddf03" path="res://addons/template_setup/setup_window.gd" id="1_w2l12"]
-[ext_resource type="PackedScene" uid="uid://cadray24botf6" path="res://addons/template_setup/renderer/renderer_selector.tscn" id="2_yksn2"]
+[ext_resource type="PackedScene" uid="uid://2qvn0y8mpokn" path="res://addons/template_setup/renderer/renderer.tscn" id="3_1cxkl"]
+[ext_resource type="PackedScene" uid="uid://dwb674460m15g" path="res://addons/template_setup/preset_settings/preset_settings.tscn" id="4_sc67k"]
 
 [sub_resource type="GDScript" id="GDScript_vs7ft"]
 script/source = "@tool
@@ -54,22 +55,12 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Renderer" type="VBoxContainer" parent="FullWindow/Contents"]
+[node name="Renderer" parent="FullWindow/Contents" instance=ExtResource("3_1cxkl")]
+visible = false
 layout_mode = 2
 
-[node name="Welcome" type="Label" parent="FullWindow/Contents/Renderer"]
-layout_mode = 2
-text = "Welcome to Boop's Godot template!
-
-Enable presets and select primary:"
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Renderers" type="ScrollContainer" parent="FullWindow/Contents/Renderer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="RendererSelector" parent="FullWindow/Contents/Renderer/Renderers" instance=ExtResource("2_yksn2")]
+[node name="PresetSettings" parent="FullWindow/Contents" instance=ExtResource("4_sc67k")]
 layout_mode = 2
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="confirmed_renderers" from="FullWindow/Contents/Renderer" to="FullWindow/Contents" method="_on_renderer_confirmed_renderers"]
