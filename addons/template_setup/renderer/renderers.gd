@@ -20,4 +20,4 @@ func _on_renderer_selector_primary_deselected() -> void:
 
 func _on_confirm_pressed() -> void:
 	visible = false
-	confirmed_renderers.emit(_renderer_selector.primary_preset.name, _renderer_selector.get_selected_renderers())
+	confirmed_renderers.emit(_renderer_selector.primary_preset.get_preset_name(), _renderer_selector.get_selected_renderers())

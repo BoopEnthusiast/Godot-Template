@@ -21,7 +21,7 @@ func get_selected_renderers() -> Array[StringName]:
 	var selected_presets: Array[StringName]
 	for preset: PresetSelector in presets:
 		if preset.button_pressed:
-			selected_presets.append(preset.name)
+			selected_presets.append(preset.get_preset_name())
 	return selected_presets
 
 

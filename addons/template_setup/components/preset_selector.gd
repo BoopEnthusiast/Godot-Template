@@ -31,6 +31,10 @@ func not_primary_anymore() -> void:
 	_set_primary.text = "Set primary"
 
 
+func get_preset_name() -> StringName:
+	return get_parent().name + " " + name
+
+
 func _on_set_primary_pressed() -> void:
 	_set_primary.disabled = true
 	_set_primary.text = "Primary"
