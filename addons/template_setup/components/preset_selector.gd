@@ -57,7 +57,7 @@ func _on_toggled(toggled_on: bool) -> void:
 func _make_new_set_primary_button() -> void:
 	_set_primary = Button.new()
 	
-	add_child(_set_primary, false)
+	add_child(_set_primary, false, Node.INTERNAL_MODE_FRONT)
 	
 	_set_primary.text = "Set primary"
 	_set_primary.set_anchors_and_offsets_preset(Control.PRESET_RIGHT_WIDE, Control.PRESET_MODE_KEEP_SIZE)
