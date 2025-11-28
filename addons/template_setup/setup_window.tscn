@@ -1,9 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfeygiorcdosn"]
+[gd_scene load_steps=4 format=3 uid="uid://cfeygiorcdosn"]
 
 [ext_resource type="Script" uid="uid://bnsujvvaddf03" path="res://addons/template_setup/setup_window.gd" id="1_w2l12"]
-[ext_resource type="PackedScene" uid="uid://dxgob3el2dixl" path="res://addons/template_setup/renderers/2d.tscn" id="2_yksn2"]
-[ext_resource type="PackedScene" uid="uid://cujra2s7hryxm" path="res://addons/template_setup/renderers/3d.tscn" id="3_sc67k"]
-[ext_resource type="PackedScene" uid="uid://n36s7yri6isw" path="res://addons/template_setup/renderers/ui_control.tscn" id="4_3tlx6"]
 [ext_resource type="Script" uid="uid://dpcgbqpe1h5ll" path="res://addons/template_setup/components/preset_selector.gd" id="5_3tlx6"]
 
 [sub_resource type="GDScript" id="GDScript_vs7ft"]
@@ -67,28 +64,6 @@ text = "Welcome to Boop's Godot template!
 Enable presets and select primary:"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="Renderers - OLD" type="HBoxContainer" parent="FullWindow/Contents/Renderer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="2D" parent="FullWindow/Contents/Renderer/Renderers - OLD" instance=ExtResource("2_yksn2")]
-layout_mode = 2
-
-[node name="VSeparator" type="VSeparator" parent="FullWindow/Contents/Renderer/Renderers - OLD"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="3D" parent="FullWindow/Contents/Renderer/Renderers - OLD" instance=ExtResource("3_sc67k")]
-layout_mode = 2
-
-[node name="VSeparator2" type="VSeparator" parent="FullWindow/Contents/Renderer/Renderers - OLD"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="UIControl" parent="FullWindow/Contents/Renderer/Renderers - OLD" instance=ExtResource("4_3tlx6")]
-layout_mode = 2
 
 [node name="Renderers" type="ScrollContainer" parent="FullWindow/Contents/Renderer"]
 layout_mode = 2

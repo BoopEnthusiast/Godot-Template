@@ -42,12 +42,6 @@ func _ready() -> void:
 	_make_new_set_primary_button()
 
 
-#func _process(_delta: float) -> void:
-	#_set_primary.set_anchors_preset(Control.PRESET_RIGHT_WIDE)
-	#if get_tree().get_frame() % 60 == 0: 
-		#print(size,"\t\t",_set_primary.position,"\t\t",_set_primary.size)
-
-
 func _on_set_primary_pressed() -> void:
 	set_primary.emit(text, self)
 	is_primary = true
