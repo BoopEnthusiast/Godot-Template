@@ -68,316 +68,122 @@ Enable presets and select primary:"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Renderers" type="HBoxContainer" parent="FullWindow/Contents/Renderer"]
+[node name="Renderers - OLD" type="HBoxContainer" parent="FullWindow/Contents/Renderer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="2D" parent="FullWindow/Contents/Renderer/Renderers" instance=ExtResource("2_yksn2")]
+[node name="2D" parent="FullWindow/Contents/Renderer/Renderers - OLD" instance=ExtResource("2_yksn2")]
 layout_mode = 2
 
-[node name="VSeparator" type="VSeparator" parent="FullWindow/Contents/Renderer/Renderers"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="3D" parent="FullWindow/Contents/Renderer/Renderers" instance=ExtResource("3_sc67k")]
-layout_mode = 2
-
-[node name="VSeparator2" type="VSeparator" parent="FullWindow/Contents/Renderer/Renderers"]
+[node name="VSeparator" type="VSeparator" parent="FullWindow/Contents/Renderer/Renderers - OLD"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="UIControl" parent="FullWindow/Contents/Renderer/Renderers" instance=ExtResource("4_3tlx6")]
+[node name="3D" parent="FullWindow/Contents/Renderer/Renderers - OLD" instance=ExtResource("3_sc67k")]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="FullWindow/Contents/Renderer"]
+[node name="VSeparator2" type="VSeparator" parent="FullWindow/Contents/Renderer/Renderers - OLD"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="UIControl" parent="FullWindow/Contents/Renderer/Renderers - OLD" instance=ExtResource("4_3tlx6")]
+layout_mode = 2
+
+[node name="Renderers" type="ScrollContainer" parent="FullWindow/Contents/Renderer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FullWindow/Contents/Renderer/ScrollContainer"]
+[node name="RendererSelector" type="VBoxContainer" parent="FullWindow/Contents/Renderer/Renderers"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PresetSelector" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Preset name here"
-script = ExtResource("5_3tlx6")
-metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
-
-[node name="2D" type="FoldableContainer" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer"]
+[node name="2D" type="FoldableContainer" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector"]
 layout_mode = 2
 folded = true
 title = "2D"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D"]
+[node name="VBoxContainer" type="VBoxContainer" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/2D"]
 visible = false
 layout_mode = 2
 
-[node name="FreeMovement" type="Label" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer"]
+[node name="Isometric" type="CheckBox" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/2D/VBoxContainer"]
 layout_mode = 2
-text = "Free Movement"
-
-[node name="IsometricFree" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer"]
-layout_mode = 2
-text = "Preset name here"
+text = "Isometric"
 script = ExtResource("5_3tlx6")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
 
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer/IsometricFree"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="SideOn" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer"]
+[node name="SideOn" type="CheckBox" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/2D/VBoxContainer"]
 layout_mode = 2
 text = "Side-on"
+script = ExtResource("5_3tlx6")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
 
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer/SideOn"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="TopDownFree" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer"]
+[node name="TopDown" type="CheckBox" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/2D/VBoxContainer"]
 layout_mode = 2
-text = "Top-down free"
+text = "Top-down"
+script = ExtResource("5_3tlx6")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
 
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer/TopDownFree"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="GridMovement" type="Label" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer"]
-layout_mode = 2
-text = "Grid-Limited Movement"
-
-[node name="IsometricGrid" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer"]
-layout_mode = 2
-text = "Isometric grid"
-
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer/IsometricGrid"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="TopDownGrid" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer"]
-layout_mode = 2
-text = "Top-down grid"
-
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer/TopDownGrid"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="3D" type="FoldableContainer" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer"]
+[node name="3D" type="FoldableContainer" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector"]
 layout_mode = 2
 folded = true
 title = "3D"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D"]
+[node name="VBoxContainer" type="VBoxContainer" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/3D"]
 visible = false
 layout_mode = 2
 
-[node name="FreeMovement" type="Label" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer"]
+[node name="FirstPerson" type="CheckBox" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/3D/VBoxContainer"]
 layout_mode = 2
-text = "Free Movement"
+text = "First-person
+"
+script = ExtResource("5_3tlx6")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
 
-[node name="FirstPerson" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer"]
+[node name="Isometric" type="CheckBox" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/3D/VBoxContainer"]
 layout_mode = 2
-text = "First-person"
+text = "Isometric"
+script = ExtResource("5_3tlx6")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
 
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer/FirstPerson"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="IsometricFree" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer"]
-layout_mode = 2
-text = "Isometric free"
-
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer/IsometricFree"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="SideOn" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer"]
+[node name="SideOn" type="CheckBox" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/3D/VBoxContainer"]
 layout_mode = 2
 text = "Side-on"
+script = ExtResource("5_3tlx6")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
 
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer/SideOn"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="ThirdPerson" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer"]
+[node name="ThirdPerson" type="CheckBox" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/3D/VBoxContainer"]
 layout_mode = 2
 text = "Third-person"
+script = ExtResource("5_3tlx6")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
 
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer/ThirdPerson"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="TopDownFree" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer"]
+[node name="TopDown" type="CheckBox" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/3D/VBoxContainer"]
 layout_mode = 2
-text = "Top-down free"
+text = "Top-down"
+script = ExtResource("5_3tlx6")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
 
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer/TopDownFree"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="GridMovement" type="Label" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer"]
-layout_mode = 2
-text = "Grid-Limited Movement"
-
-[node name="IsometricGrid" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer"]
-layout_mode = 2
-text = "Isometric grid"
-
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer/IsometricGrid"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="TopDownGrid" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer"]
-layout_mode = 2
-text = "Top-down grid"
-
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/3D/VBoxContainer/TopDownGrid"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="UI" type="FoldableContainer" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer"]
+[node name="UI" type="FoldableContainer" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector"]
 layout_mode = 2
 folded = true
 title = "UI"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/UI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/UI"]
 visible = false
 layout_mode = 2
 
-[node name="Empty" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/UI/VBoxContainer"]
+[node name="Empty" type="CheckBox" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/UI/VBoxContainer"]
 layout_mode = 2
-text = "Empty (UI games are so different it's hard to make presets)"
+text = "Empty (UI games tend to be unique and lack commonalities)"
+script = ExtResource("5_3tlx6")
+metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
 
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/UI/VBoxContainer/Empty"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="Drag" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/UI/VBoxContainer"]
+[node name="Drag" type="CheckBox" parent="FullWindow/Contents/Renderer/Renderers/RendererSelector/UI/VBoxContainer"]
 layout_mode = 2
 text = "Drag screen and elements around"
-
-[node name="SetPrimary" type="Button" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/UI/VBoxContainer/Drag"]
-visible = false
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "Set primary"
-
-[node name="PresetSelector2" type="CheckBox" parent="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-text = "Preset name here"
 script = ExtResource("5_3tlx6")
 metadata/_custom_type_script = "uid://dpcgbqpe1h5ll"
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
-[connection signal="toggled" from="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer/IsometricFree" to="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer/IsometricFree" method="_on_toggled"]
-[connection signal="pressed" from="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer/IsometricFree/SetPrimary" to="FullWindow/Contents/Renderer/ScrollContainer/VBoxContainer/2D/VBoxContainer/IsometricFree" method="_on_set_primary_pressed"]

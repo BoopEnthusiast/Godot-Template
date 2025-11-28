@@ -9,5 +9,6 @@ var _template_storage: TemplateStorage = preload("uid://dujyyoo1nruww")
 
 func _ready() -> void:
 	var setup_window: Window = _SETUP_WINDOW.instantiate()
+	setup_window.process_mode = Node.PROCESS_MODE_INHERIT
 	EditorInterface.popup_dialog_centered_clamped(setup_window)
 	_template_storage.setup_window = setup_window

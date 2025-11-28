@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/template_setup/plugin.cfg")
+enabled=PackedStringArray("res://addons/self_inspect/plugin.cfg", "res://addons/template_setup/plugin.cfg")
 
 [file_customization]
 
